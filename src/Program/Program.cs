@@ -7,9 +7,9 @@ namespace PII_Game_Of_Life
     {
         static void Main(string[] args)
         {
-            Tablero tablero = new Tablero(@"../../assets/board.txt");
-            Juego juego = new Juego(tablero);
-            ImpresorTablero.MostrarTablero(juego);
+            Board board = new Board(@"../../assets/board.txt");
+            Game game = new Game(board);
+            PrintBoard.ShowBoard(game);
         }
     }
 }

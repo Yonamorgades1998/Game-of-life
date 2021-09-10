@@ -4,22 +4,22 @@ using System.IO;
 namespace PII_Game_Of_Life
 {
     
-    public class Juego
+    public class Game
     {
         public int BoardWidth {get; set;}
         public int BoardHeight { get; set; }
         public bool [,] GameBoard {get; set;}
         public bool [,] CloneBoard {get; set;}
 
-        public Juego(Tablero tablero)
+        public Game(Board board)
         {
-            this.GameBoard = tablero.Board;
+            this.GameBoard = board.Board_;
             this.BoardWidth = GameBoard.GetLength(0);
             this.BoardHeight = GameBoard.GetLength(1);
             this.CloneBoard = new bool[BoardWidth, BoardHeight];
         }
 
-        public void LogicaJuego()
+        public void LogicaGame()
         {
             for (int x = 0; x < this.BoardWidth; x++)
             {

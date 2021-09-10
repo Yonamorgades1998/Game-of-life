@@ -6,19 +6,19 @@ using System.Threading;
 namespace PII_Game_Of_Life
 {
     
-    public class ImpresorTablero
+    public class PrintBoard
     {
-        public static void MostrarTablero(Juego juego)
+        public static void ShowBoard(Game game)
         {
             while (true)
             {
                 Console.Clear();
                 StringBuilder s = new StringBuilder();
-                for (int y = 0; y<juego.BoardHeight;y++)
+                for (int y = 0; y<game.BoardHeight;y++)
                 {
-                    for (int x = 0; x<juego.BoardWidth; x++)
+                    for (int x = 0; x<game.BoardWidth; x++)
                     {
-                        if(juego.GameBoard[x,y])
+                        if(game.GameBoard[x,y])
                         {
                             s.Append("|X|");
                         }
@@ -30,7 +30,7 @@ namespace PII_Game_Of_Life
                     s.Append("\n");
                 }
                 Console.WriteLine(s.ToString());
-                juego.LogicaJuego();
+                game.LogicaGame();
                 Thread.Sleep(300);
             }
         }
